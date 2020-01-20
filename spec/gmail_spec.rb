@@ -1,5 +1,6 @@
-describe 'Forms', :Gmail do
-    it 'Excluir Emails' do
+describe 'Automatização funções Gmail', :Gmail do
+    
+    before(:each) do
         visit 'https://mail.google.com/mail/u/0/?tab=wm&ogbl&zx=vlndz4h7blg3#inbox'
         
         fill_in 'identifier', with: 'automacaoteste18@gmail.com'
@@ -11,7 +12,9 @@ describe 'Forms', :Gmail do
         
         Elemento = find("#passwordNext") 
         Elemento.click
+    end
     
+    it 'Excluir Emails' do
         modulo = find('.aKz')
         modulo.find(text: 'Atualizações').click
 
