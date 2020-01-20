@@ -5,3 +5,9 @@
 fill_in '' -> Preencha o campo tag name no inspec
 with -> Valor do campo
 sleep -> Esperar antes de fechar o projeto
+to eql -> Contem
+find -> Encontre
+expect -> procura no local ***
+=============
+img = find(#new-img)
+expect(img[:src]).to eql 'imagem.pmg'

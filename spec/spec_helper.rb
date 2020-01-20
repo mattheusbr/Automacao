@@ -1,6 +1,8 @@
 require 'capybara'
 require 'capybara/rspec'
 
+
+
 RSpec.configure do |config|
 
   config.expect_with :rspec do |expectations|
@@ -20,6 +22,8 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
 end
+
+Capybara.automatic_reload = false
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome 
