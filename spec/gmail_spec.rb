@@ -1,9 +1,4 @@
-require 'selenium-webdriver'
-selenium: :webdriver: :Chrome.driver_path="C:/chromedriver.exe"
-@driver = Selenium: :WebDriver.for :chrome
-
-
-describe 'Forms' do
+describe 'Forms', :Gmail do
     it 'Excluir Emails' do
         visit 'https://mail.google.com/mail/u/0/?tab=wm&ogbl&zx=vlndz4h7blg3#inbox'
         
@@ -17,9 +12,8 @@ describe 'Forms' do
         Elemento = find("#passwordNext") 
         Elemento.click
     
-        expect(page.title).to eql 'Gmail' 
-        @driver.find_element(:id, ":2r").submit
-    
+        modulo = find('.aKz')
+        modulo.find(text: 'Atualizações').click
 
 
 

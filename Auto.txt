@@ -4,3 +4,4 @@
 ============
 fill_in '' -> Preencha o campo tag name no inspec
 with -> Valor do campo
+sleep -> Esperar antes de fechar o projeto
