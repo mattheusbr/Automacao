@@ -11,24 +11,24 @@ describe 'Upload arquivos', :upload do
         attach_file('file-upload', @arquivo)
         click_button 'file-submit'
 
+        #Verifica o arquivo 
         verificar = find('#uploaded-file')
-        expect(verificar.text). to eql 'tteste.txt'
+        expect(verificar.text).to eql 'tteste.txt'
 
     end
 
     it 'Upload arquivo imagem/Verificar se o arquivo imagem foi enviado' do
+        
+        Capybara.default_max_wait_time = 5  #Tempo maximo para reconhecer um elemento na pag
         attach_file('file-upload', @imagem)
         click_button 'file-submit'
-
-        if expect(find('#loading')).to have_content 'Carregando a foto...'
-            sleep 5
-            imagem = find('#new-image')
-            expect(imagem[:src]). to eql 'http://training-wheels-protocol.herokuapp.com/uploads/teste.png'
-        end 
-        puts 'teste'
         
+        #Verifica se é a imagem carregada 
+        if expect(find('#loading')).to have_content 'Carregando a foto...'
+            imagem = find('#new-image')
+            expect(imagem[:src]).to eql 'http://training-wheels-protocol.herokuapp.com/uploads/teste.png'
+        end    
     end
-
 
     after(:each) do
         sleep 3
