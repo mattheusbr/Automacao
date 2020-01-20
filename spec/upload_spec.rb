@@ -23,7 +23,7 @@ describe 'Upload arquivos', :upload do
         attach_file('file-upload', @imagem)
         click_button 'file-submit'
         
-        #Verifica se Ã© a imagem carregada 
+        #Verifica se é a imagem carregada 
         if expect(find('#loading')).to have_content 'Carregando a foto...'
             imagem = find('#new-image')
             expect(imagem[:src]).to eql 'http://training-wheels-protocol.herokuapp.com/uploads/teste.png'
