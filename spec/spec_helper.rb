@@ -23,9 +23,10 @@ RSpec.configure do |config|
 
 end
 
-Capybara.automatic_reload = false
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome 
+  #Capybara.automatic_reload = false
+
 end
 

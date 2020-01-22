@@ -8,6 +8,8 @@ sleep -> Esperar antes de fechar o projeto
 to eql -> Contem
 find -> Encontre
 expect -> procura no local ***
+find('img[alt=Blade]') -> Pega a tag e o elemento dentro dela 
+have_content -> Contem informado 
 =============
 img = find(#new-img)
 expect(img[:src]).to eql 'imagem.pmg'
