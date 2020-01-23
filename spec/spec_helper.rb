@@ -26,7 +26,7 @@ end
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome 
-  #Capybara.automatic_reload = false
+  Capybara.ignore_hidden_elements = false
 
 end
 
