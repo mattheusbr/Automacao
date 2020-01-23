@@ -9,6 +9,9 @@ to eql -> Contem
 find -> Encontre
 expect -> procura no local ***
 find('img[alt=Blade]') -> Pega a tag e o elemento dentro dela 
+-> find('img[alt^=Blade]') -> Pega a tag e o elemento dentro dela (que começa com Blade -> ^)
+-> find('img[alt$=Blade]') -> Pega a tag e o elemento dentro dela (que termina com Blade -> $)
+-> find('img[alt*=Blade]') -> Pega a tag e o elemento dentro dela (que contem o nome Blade -> *)
 have_content -> Contem informado 
 =============
 img = find(#new-img)

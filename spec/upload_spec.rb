@@ -26,7 +26,7 @@ describe 'Upload arquivos', :upload do
         #Verifica se  a imagem carregada 
         if expect(find('#loading')).to have_content 'Carregando a foto...'
             imagem = find('#new-image')
-            expect(imagem[:src]).to eql 'http://training-wheels-protocol.herokuapp.com/uploads/teste.png'
+            expect(imagem[:src]).to eql 'http://training-wheels-protocol.herokuapp.com/uploads/foto.png'
         end    
     end
 
