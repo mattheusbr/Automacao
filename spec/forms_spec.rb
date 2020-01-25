@@ -15,7 +15,6 @@ describe 'Forms', :login do
         #Verifica se o texto no elemento contem essa parte
         expect(find("#flash")).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
         
-        sleep 5
     
         #have_content | include (da o mesmo resultado de verificação)
 
