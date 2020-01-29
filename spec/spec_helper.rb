@@ -26,7 +26,6 @@ end
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome 
-  Capybara.ignore_hidden_elements = false
 
 end
 
