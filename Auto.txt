@@ -3,6 +3,7 @@
 -> Verifica se o titulo da pagina é o informado 
 ============
 fill_in '' -> Preencha o campo tag name no inspec
+set -> seta um valor 
 with -> Valor do campo
 sleep -> Esperar antes de fechar o projeto
 to eql -> Contem
@@ -13,6 +14,7 @@ find('img[alt=Blade]') -> Pega a tag e o elemento dentro dela
 -> find('img[alt$=Blade]') -> Pega a tag e o elemento dentro dela (que termina com Blade -> $)
 -> find('img[alt*=Blade]') -> Pega a tag e o elemento dentro dela (que contem o nome Blade -> *)
 have_content -> Contem informado 
+within -> buscar dentro do elemento
 =============
 img = find(#new-img)
 expect(img[:src]).to eql 'imagem.pmg'

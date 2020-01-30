@@ -1,6 +1,7 @@
 describe 'Automatização funções Gmail', :Gmail do
 
-    email = 'automacaoteste18@gmail.com'
+    email = 'automacaoteste19@gmail.com'
+    email_certo = 'automacaoteste18@gmail.com'
     senha = 'benner123'
 
     before(:each) do
@@ -22,7 +23,7 @@ describe 'Automatização funções Gmail', :Gmail do
 
         Capybara.ignore_hidden_elements = false
         find('span[class="gb_Ia gbii"]').hover
-        expect(find('.gb_Pe').text).to include email
+        expect(find('.gb_Pe').text).to include email_certo
 
         atualizacao = find('.aRz .aJi-aLe')
         atualizacao.click 
