@@ -1,6 +1,6 @@
 describe 'Automatização funções Gmail', :Gmail do
 
-    email = 'automacaoteste19@gmail.com'
+    email = 'automacaoteste18@gmail.com'
     email_certo = 'automacaoteste18@gmail.com'
     senha = 'benner123'
 
@@ -21,19 +21,22 @@ describe 'Automatização funções Gmail', :Gmail do
 
     it 'Validar se está logado / Excluir Emails' do
 
+        #Verificar Email logado
         Capybara.ignore_hidden_elements = false
         find('span[class="gb_Ia gbii"]').hover
         expect(find('.gb_Pe').text).to include email_certo
 
+        #Trocar para o modulo certo
         atualizacao = find('.aRz .aJi-aLe')
         atualizacao.click 
 
+        #Selecionar todos e Excluir
         first('span[dir=ltr]').set(true)
         find('div[data-tooltip="Excluir"]').click
-        #expect(page).to eql 'conversas movidas para a lixeira.'
-        
-    
-        sleep 5
+        #Verificar se foi movido para lixeira
+        expect(find('.bAq')).to have_content 'Conversa movida para a lixeira.'
+
+        sleep 2
 
     end
 end
