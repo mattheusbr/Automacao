@@ -34,7 +34,7 @@ describe 'Automatização funções Gmail', :Gmail do
         first('span[dir=ltr]').set(true)
         find('div[data-tooltip="Excluir"]').click
         #Verificar se foi movido para lixeira
-        expect(find('.bAq')).to have_content 'Conversa movida para a lixeira.'
+        expect(find('.bAq').text).to include 'Conversa movida para a lixeira.'
 
         sleep 2
 
