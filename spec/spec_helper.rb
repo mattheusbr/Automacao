@@ -23,6 +23,8 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
+  config.formatter = :documentation
+  
   config.before(:example) do
 
     page.current_window.resize_to(1280, 800)
@@ -45,6 +47,7 @@ end
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome
+  #selenium_chrome_headless Rodar com navegador fechado
   config.app_host = 'http://training-wheels-protocol.herokuapp.com'
 
 end
