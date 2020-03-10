@@ -1,6 +1,7 @@
 describe 'Forms', :login do
     it 'Login no Site' do
-        visit 'http://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
+
         fill_in 'username', with: 'stark'
         fill_in 'password', with: 'jarvis!'
 

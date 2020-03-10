@@ -1,5 +1,7 @@
 require 'capybara'
 require 'capybara/rspec'
+require 'selenium-webdriver'
+require 'time'
 
 
 
@@ -21,11 +23,29 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
+  config.before(:example) do
+
+    page.current_window.resize_to(1280, 800)
+
+  end
+
+  config.after(:example) do |e|
+    nome = e.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_')
+    
+    if e.exception
+      page.save_screenshot('log/' + 'Fail_' + nome + '.png') 
+    else 
+      page.save_screenshot('log/' + nome + '.png')
+    end
+
+  end 
+
 end
 
 
 Capybara.configure do |config|
-  config.default_driver = :selenium
+  config.default_driver = :selenium_chrome
+  config.app_host = 'http://training-wheels-protocol.herokuapp.com'
 
 end
 

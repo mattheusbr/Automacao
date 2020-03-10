@@ -17,6 +17,8 @@ describe 'Automatização funções Gmail', :Gmail do
         ElementoSenha = find("#passwordNext") 
         ElementoSenha.click
 
+
+
     end
 
     it 'Validar se está logado / Excluir Emails' do
@@ -35,6 +37,8 @@ describe 'Automatização funções Gmail', :Gmail do
         find('div[data-tooltip="Excluir"]').click
         #Verificar se foi movido para lixeira
         expect(find('.bAq').text).to include 'Conversa movida para a lixeira.'
+
+        page.save_screenshot('log')
 
         sleep 2
 

@@ -4,7 +4,7 @@ describe 'Upload arquivos', :upload do
     before(:each) do
         @arquivo = Dir.pwd + '/spec/fixtures/tteste.txt'
         @imagem = Dir.pwd + '/spec/fixtures/teste.png'
-        visit 'http://training-wheels-protocol.herokuapp.com/upload'
+        visit '/upload'
     end
 
     it 'Upload com arquivo txt/Verificar se o arquivo txt foi enviado' do
@@ -26,7 +26,7 @@ describe 'Upload arquivos', :upload do
         #Verifica se  a imagem carregada 
         if expect(find('#loading')).to have_content 'Carregando a foto...'
             imagem = find('#new-image')
-            expect(imagem[:src]).to eql 'http://training-wheels-protocol.herokuapp.com/uploads/foto.png'
+            expect(imagem[:src]).to eql '/uploads/foto.png'
         end    
     end
 

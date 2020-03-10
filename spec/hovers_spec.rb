@@ -1,6 +1,6 @@
 describe 'Mouse Hovers', :hovers do
     before(:each)do
-        visit'http://training-wheels-protocol.herokuapp.com/hovers'
+        visit'/hovers'
     end
 
     after(:each) do

@@ -1,7 +1,7 @@
 describe 'Login com cadastro', :loginCadastro do
     
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/access'
+        visit '/access'
     end 
 
     
@@ -14,6 +14,8 @@ describe 'Login com cadastro', :loginCadastro do
         end
         expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
         sleep 1.5
+        page.save_screenshot('log/logado')
+
     end
 
     it 'Criar Conta' do
